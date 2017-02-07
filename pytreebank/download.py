@@ -56,6 +56,6 @@ def download_sst(path, url):
     utils.urlretrieve(url, zip_local)
     ZipFile(zip_local).extractall(path)
     for fname in local_files.values():
-        move(join(path, 'trainDevTestTrees_PTB', 'trees', fname.split('/')[-1]), fname)
+        move(join(path, 'trees', fname.split('/')[-1]), fname)
     delete_paths([zip_local, join(path, 'trainDevTestTrees_PTB', 'trees'), join(path, 'trainDevTestTrees_PTB')])
     return local_files
